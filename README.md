@@ -1,0 +1,2 @@
+# VRCDynamicPosterPrefab
+Unity を立ち上げずに内容編集できることを目指したワールド紹介ポスターです
