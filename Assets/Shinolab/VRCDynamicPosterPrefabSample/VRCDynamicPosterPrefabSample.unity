@@ -1236,8 +1236,8 @@ MonoBehaviour:
   DynamicPrefabs: []
   DynamicMaterials:
   - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 2100000, guid: 505d3794d85b63c4381a86d43413adc7, type: 2}
   - {fileID: 2100000, guid: d7b35e6a98332e8438eabd40ff21f230, type: 2}
+  - {fileID: 2100000, guid: 505d3794d85b63c4381a86d43413adc7, type: 2}
   LightMapsNear: []
   LightMapsFar: []
   LightMode: 0
