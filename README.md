@@ -2,7 +2,9 @@
 
 Unity を立ち上げずに内容編集できることを目指したワールド/パブリックアバター紹介ポスターです。
 
-本リポジトリは、ワールドに配置するアセットです。VCC 対応済、Quest 動作確認済。
+本リポジトリは、ワールドに配置するアセット管理と、それを用いたサンプルワールドが含まれています。VCC 対応済、Quest 動作確認済。
+
+[VRCDynamicPosterPrefab Sample by azarashino](https://vrchat.com/home/launch?worldId=wrld_44b2393f-0e43-4ba8-8ad1-da3a5e5b01d9) で本内容を PC/Quest 向けに公開しています。
 
 ## 使い方
 
@@ -45,6 +47,8 @@ Unity を立ち上げずに内容編集できることを目指したワール�
 
 ## 補足・制約事項
 
+- うまくいかない場合、本 repository を clone して Unity で開き、動作するかご確認ください
+  - 内容は [VRCDynamicPosterPrefab Sample by azarashino](https://vrchat.com/home/launch?worldId=wrld_44b2393f-0e43-4ba8-8ad1-da3a5e5b01d9) で公開している内容そのものになります
 - ポスターごとに対応できる要素数は 128 エントリまでです。それ以上は動画生成時に切り捨てています
   - RenderTexture, Camera 画角, 生成側の上限数をいじれば手動で対応は可能ですが、Texture Size が大きくなります
 - WorldId, AvatarId ではないエントリを混ぜた場合、暴走抑制のため動画の Parse を途中で打ち切ります
