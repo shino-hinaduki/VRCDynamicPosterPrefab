@@ -43,10 +43,6 @@ public class VRCDynamicPosterCore : UdonSharpBehaviour
     [SerializeField]
     float DelayRetryTime = 15.0f;
 
-    [Header("読み込み失敗時、UIをInteractされたらRetryを許可")]
-    [SerializeField]
-    bool IsAllowManualRetry = true;
-
     [Header("自動切り替え有効")]
     [SerializeField]
     bool IsEnableAutoUpdate = true;
@@ -756,12 +752,6 @@ public class VRCDynamicPosterCore : UdonSharpBehaviour
         if (!MoveOwner())
         {
             PrintDebugLog($"[VDPP] {nameof(MoveNext)}. data is not available.");
-            // MoveNext自体は失敗だが、Retryさせるチャンスを用意
-            if (isLoadFailed && IsAllowManualRetry)
-            {
-                PrintDebugLog($"[VDPP] {nameof(MoveNext)}. ManualRetry. {retryCount}/{RetryLimitCount}");
-                SendCustomEventDelayedSeconds(nameof(StartLoadIdList), DelayRetryTime);
-            }
             return;
         }
 
@@ -794,12 +784,6 @@ public class VRCDynamicPosterCore : UdonSharpBehaviour
         if (!MoveOwner())
         {
             PrintDebugLog($"[VDPP] {nameof(MovePrevious)}. data is not available.");
-            // MoveNext自体は失敗だが、Retryさせるチャンスを用意
-            if (isLoadFailed && IsAllowManualRetry)
-            {
-                PrintDebugLog($"[VDPP] {nameof(MovePrevious)}. ManualRetry. {retryCount}/{RetryLimitCount}");
-                SendCustomEventDelayedSeconds(nameof(StartLoadIdList), DelayRetryTime);
-            }
             return;
         }
 
@@ -832,12 +816,6 @@ public class VRCDynamicPosterCore : UdonSharpBehaviour
         if (!MoveOwner())
         {
             PrintDebugLog($"[VDPP] {nameof(TogglePortal)}. data is not available.");
-            // MoveNext自体は失敗だが、Retryさせるチャンスを用意
-            if (isLoadFailed && IsAllowManualRetry)
-            {
-                PrintDebugLog($"[VDPP] {nameof(TogglePortal)}. ManualRetry. {retryCount}/{RetryLimitCount}");
-                SendCustomEventDelayedSeconds(nameof(StartLoadIdList), DelayRetryTime);
-            }
             return;
         }
 
