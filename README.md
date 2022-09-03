@@ -49,6 +49,7 @@ Unity を立ち上げずに内容編集できることを目指したワール�
 
 - うまくいかない場合、本 repository を clone して Unity で開き、動作するかご確認ください
   - 内容は [VRCDynamicPosterPrefab Sample by azarashino](https://vrchat.com/home/launch?worldId=wrld_44b2393f-0e43-4ba8-8ad1-da3a5e5b01d9) で公開している内容そのものになります
+- allow untrusted urls にチェックが入っていない VRChat ユーザには表示されません
 - ポスターごとに対応できる要素数は 128 エントリまでです。それ以上は動画生成時に切り捨てています
   - RenderTexture, Camera 画角, 生成側の上限数をいじれば手動で対応は可能ですが、Texture Size が大きくなるので程々の大きさがおすすめです
 - ポスター自体のサイズ変更も可能です
