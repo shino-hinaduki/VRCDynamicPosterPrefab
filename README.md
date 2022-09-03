@@ -50,7 +50,10 @@ Unity を立ち上げずに内容編集できることを目指したワール�
 - うまくいかない場合、本 repository を clone して Unity で開き、動作するかご確認ください
   - 内容は [VRCDynamicPosterPrefab Sample by azarashino](https://vrchat.com/home/launch?worldId=wrld_44b2393f-0e43-4ba8-8ad1-da3a5e5b01d9) で公開している内容そのものになります
 - ポスターごとに対応できる要素数は 128 エントリまでです。それ以上は動画生成時に切り捨てています
-  - RenderTexture, Camera 画角, 生成側の上限数をいじれば手動で対応は可能ですが、Texture Size が大きくなります
+  - RenderTexture, Camera 画角, 生成側の上限数をいじれば手動で対応は可能ですが、Texture Size が大きくなるので程々の大きさがおすすめです
+- ポスター自体のサイズ変更も可能です
+  - [shino-hinaduki/VRCDynamicPoster](https://github.com/shino-hinaduki/VRCDynamicPoster) 側で統一した画像サイズにしておき、 `VRCDynamicPosterPosterVideoRenderTexture` のサイズとポスターを貼り付けてある `PosterVideoWithQuad` の大きさを調整します
+  - デフォルトの画像サイズは、 VRChat を Web Page で開いたときの画像そのままです
 - WorldId, AvatarId ではないエントリを混ぜた場合、暴走抑制のため動画の Parse を途中で打ち切ります
 
   - Camera 設置起因以外に Parse 失敗は基本想定していないため、ポスターは正常に表示できない可能性があります
