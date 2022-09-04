@@ -254,7 +254,7 @@ public class VRCDynamicPosterCore : UdonSharpBehaviour
         set
         {
             PrintDebugLog($"[VDPP][FieldChangeCallback] {nameof(CurrentId)}: {CurrentId}=>{value}");
-            CurrentId = value;
+            currentId = value;
 
             // UI反映
             SyncUI();
