@@ -254,7 +254,7 @@ public class VRCDynamicPosterCore : UdonSharpBehaviour
         set
         {
             PrintDebugLog($"[VDPP][FieldChangeCallback] {nameof(CurrentId)}: {CurrentId}=>{value}");
-            CurrentId = value;
+            currentId = value;
 
             // UI反映
             SyncUI();
@@ -393,6 +393,8 @@ public class VRCDynamicPosterCore : UdonSharpBehaviour
             PrintDebugLog($"[VDPP] {nameof(AbortLoadIdList)}. Abort. {retryCount}/{RetryLimitCount}");
             // 変数だけ初期化して、余計なものが動かないようにしておく
             InitializeVariables();
+            // 救済ポータルが見える状況の場合は見せる
+            SyncUI();
             return;
         }
         // Retryする
@@ -671,13 +673,13 @@ public class VRCDynamicPosterCore : UdonSharpBehaviour
             if (id.IndexOf(worldIdHeader) != -1)
             {
                 // World on 
-                TargetPortal.roomId = idList[CurrentPosterIndex];
+                TargetPortal.roomId = id;
                 TargetPortal.RefreshPortal();
                 TargetPortal.gameObject.SetActive(true);
                 // Avatar off
                 TargetPedestal.gameObject.SetActive(false);
 
-                PrintDebugLog($"[VDPP] TargetPortal active. index={CurrentPosterIndex} roomId={TargetPortal.roomId}");
+                PrintDebugLog($"[VDPP] TargetPortal active. index={CurrentPosterIndex} roomId={id}");
             }
             else if (id.IndexOf(avatarIdHeader) != -1)
             {
@@ -687,7 +689,7 @@ public class VRCDynamicPosterCore : UdonSharpBehaviour
                 TargetPedestal.blueprintId = id;
                 TargetPedestal.gameObject.SetActive(true);
 
-                PrintDebugLog($"[VDPP] TargetPedestal active. index={CurrentPosterIndex} roomId={TargetPedestal.blueprintId}");
+                PrintDebugLog($"[VDPP] TargetPedestal active. index={CurrentPosterIndex} roomId={id}");
             }
             else
             {
