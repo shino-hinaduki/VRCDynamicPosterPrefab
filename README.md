@@ -6,6 +6,8 @@ Unity を立ち上げずに内容編集できることを目指したワール�
 
 [VRCDynamicPosterPrefab Sample by azarashino](https://vrchat.com/home/launch?worldId=wrld_44b2393f-0e43-4ba8-8ad1-da3a5e5b01d9) で本内容を PC/Quest 向けに公開しています。
 
+Boothでも公開しました https://azarashino.booth.pm/items/4141397
+
 ## 使い方
 
 [shino-hinaduki/VRCDynamicPoster](https://github.com/shino-hinaduki/VRCDynamicPoster) が絡んでいて複雑そうな印象を与えていますが、 基本ポン置きして URL だけ修正すれば動きます。
